@@ -1,0 +1,61 @@
+﻿# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local env files
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# IDE and agent-local metadata
+.vscode/
+.idea/
+.agents/
+.claude/
+
+# Data, checkpoints, and model artifacts
+data/
+dataset/
+datasets/
+checkpoints*/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Runtime outputs and experiment artifacts
+logs/
+tmp/
+diagnostics/
+results*/
+outputs/
+runs/
+wandb/
+*.log
+*.cache
+
+# Generated figures, diagrams, and archives
+figures/
+framework_unzip/
+visio_review/
+*.zip
+*.vsdx
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+*.csv
+*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db

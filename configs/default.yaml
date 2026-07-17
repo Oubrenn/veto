@@ -1,0 +1,58 @@
+# Phase-Path网络默认配置
+
+# 数据集
+dataset:
+  name: "Handwriting"
+  data_path: "D:/Xjnproject/XJNproject/1uka/SPINNET/dataset"
+  batch_size: 16
+  num_workers: 0
+
+# 模型
+model:
+  n_phases: 5
+  embed_dim: 128
+  backbone: "inception"  # inception, resnet, fcn
+  window_size: null  # null表示自动计算
+  stride: null
+  use_tf_branch: false
+  use_memory: true
+
+# 训练
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"  # adam, sgd, adamw
+  scheduler: "cosine"  # cosine, step, plateau
+  label_smoothing: 0.1
+  gradient_clip: 1.0
+
+# 损失权重
+loss_weights:
+  classification: 1.0
+  counterfactual: 0.5
+  transition: 0.1
+  memory: 0.1
+  tf_consistency: 0.1
+
+# 反事实生成
+counterfactual:
+  min_phase_length: 3
+  start_epoch: 5  # 从第几个epoch开始使用反事实
+
+# 记忆
+memory:
+  evidence_threshold: 5
+  residual_threshold: 0.5
+  entropy_threshold: 0.3
+  momentum: 0.9
+
+# 保存
+save:
+  checkpoint_dir: "checkpoints"
+  log_dir: "logs"
+  save_best: true
+  save_interval: 10
+
+# 设备
+device: "cuda"  # cuda, cpu

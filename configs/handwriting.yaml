@@ -1,0 +1,42 @@
+# Handwriting dataset configuration aligned with the final VETO protocol.
+
+dataset:
+  name: "Handwriting"
+  data_path: "D:/Xjnproject/XJNproject/1uka/SPINNET/dataset"
+  batch_size: 16
+  num_workers: 0
+
+model:
+  n_phases: 5
+  embed_dim: 128
+  backbone: "inception"
+  window_size: null
+  stride: null
+  use_tf_branch: false
+  use_memory: true
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"
+  scheduler: "cosine"
+  label_smoothing: 0.1
+  gradient_clip: 1.0
+
+loss_weights:
+  classification: 1.0
+  counterfactual: 0.5
+  transition: 0.1
+  memory: 0.1
+  tf_consistency: 0.0
+
+counterfactual:
+  min_phase_length: 3
+  start_epoch: 5
+
+memory:
+  evidence_threshold: 5
+  residual_threshold: 0.5
+  entropy_threshold: 0.3
+  momentum: 0.9
