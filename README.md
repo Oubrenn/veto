@@ -2,8 +2,6 @@
 
 VETO is a PyTorch research codebase for multivariate time-series classification with phase-path modeling, memory modules, uncertainty estimation, and experiment utilities.
 
-This repository contains code only. Datasets, checkpoints, generated figures, logs, diagnostics, caches, and other local experiment artifacts are intentionally excluded.
-
 ## Repository Structure
 
 ```text
