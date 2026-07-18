@@ -55,7 +55,7 @@ foreach ($model in $models) {
         $stdoutLog = Join-Path $outDir "$model`_$dataset.out.log"
         $stderrLog = Join-Path $outDir "$model`_$dataset.err.log"
 
-        & $python benchmark_official_splits.py `
+        & $python experiments\official_benchmark.py `
             --experiment "main_table_$model`_10ep" `
             --model $model `
             --data_path $data `

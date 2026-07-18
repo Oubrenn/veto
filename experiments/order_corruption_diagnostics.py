@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 
 from data import CounterfactualGenerator, PhasePathDataset
 from models import PhasePathNet
-from train import reconstruct_from_windows
+from training.train import reconstruct_from_windows
 
 
 def build_model_from_checkpoint(checkpoint, dataset, args):

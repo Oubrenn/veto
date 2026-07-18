@@ -48,7 +48,7 @@ foreach ($dataset in $datasets) {
         $batchSize = 16
     }
 
-    & $python benchmark_official_splits.py `
+    & $python experiments\official_benchmark.py `
         --experiment "main_table_veto_100ep_5seed" `
         --data_path $data `
         --datasets $dataset `

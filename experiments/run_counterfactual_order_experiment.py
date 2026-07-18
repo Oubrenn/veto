@@ -34,9 +34,9 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from benchmark_official_splits import make_losses, make_model
+from experiments.official_benchmark import make_losses, make_model
 from data import CounterfactualGenerator, get_dataloader
-from train import evaluate, train_epoch
+from training.train import evaluate, train_epoch
 from utils.common import set_seed
 
 

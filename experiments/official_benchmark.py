@@ -2,6 +2,7 @@
 import argparse
 import csv
 import json
+import sys
 import time
 import traceback
 from pathlib import Path
@@ -12,10 +13,14 @@ import torch.optim as optim
 from sklearn.metrics import f1_score
 from torch.utils.data import DataLoader, Subset
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from data import CounterfactualGenerator, get_dataloader
 from losses import ClassificationLoss, CounterfactualLoss, MemoryLoss, TransitionLoss
 from models import PhasePathNet, build_baseline_model
-from train import evaluate, train_epoch
+from training.train import evaluate, train_epoch
 from utils.common import count_parameters, set_seed
 
 
@@ -368,7 +373,7 @@ def reconstruct_corrupted_windows(model, x):
         )
     else:
         corrupted = windows.flip(dims=[1])
-    from train import reconstruct_from_windows
+    from training.train import reconstruct_from_windows
 
     return reconstruct_from_windows(
         corrupted,

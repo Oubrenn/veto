@@ -1,6 +1,10 @@
 """快速开始脚本 - 测试数据集加载"""
 import sys
-sys.path.append('.')
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from data import get_dataset_info
 

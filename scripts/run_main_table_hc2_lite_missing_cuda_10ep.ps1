@@ -30,7 +30,7 @@ foreach ($dataset in $datasets) {
         $batchSize = 32
     }
 
-    & $python benchmark_official_splits.py `
+    & $python experiments\official_benchmark.py `
         --experiment "main_table_hc2_lite_10ep" `
         --model "hc2_lite" `
         --data_path $data `

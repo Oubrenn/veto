@@ -30,7 +30,7 @@ $datasets = @(
     "RacketSports"
 )
 
-& $python benchmark_official_splits.py `
+& $python experiments\official_benchmark.py `
     --experiment main_table_veto_missing_bs64_10ep `
     --data_path $data `
     --datasets $datasets `

@@ -25,7 +25,7 @@ $models = @(
 )
 
 foreach ($model in $models) {
-    & $python benchmark_official_splits.py `
+    & $python experiments\official_benchmark.py `
         --experiment "main_table_$model`_10ep" `
         --model $model `
         --data_path $data `
@@ -45,7 +45,7 @@ foreach ($model in $models) {
     }
 }
 
-& $python benchmark_official_splits.py `
+& $python experiments\official_benchmark.py `
     --experiment "main_table_veto_10ep" `
     --model "veto" `
     --data_path $data `
